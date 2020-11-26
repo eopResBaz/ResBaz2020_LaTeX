@@ -1,0 +1,122 @@
+% author: Eirian Owen Perkins
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Preamble                                           %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[a4paper,twoside,english]{article}
+% open any -- no blank line between chapters (default is open on RHS page)
+% twocolumn -- two columns of text
+% twoside -- intended for 2 sided printing
+\documentclass[openany,onecolumn,oneside,english]{memoir}
+
+\usepackage{template/eirianstyle}
+\usepackage{subfiles}
+\usepackage{multicol}  
+
+% chapter style for Table of Contents
+% only impacts ToC because of eirianstyle.sty overrides chapter style elsewhere
+%\chapterstyle{bianchi}
+\chapterstyle{verville}
+
+
+% bibtex
+\bibliography{documentRef}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Glossary definitions                               %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% this calls \makenoidxglossaries                     %%%
+%%% so be sure to create glossary at end of document    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% uncomment line to add glossary 
+%\usepackage{pages/glossary}
+
+
+
+% text colour
+\color{uoaDarkGrey}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Begin        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Document     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\pagenumbering{roman}
+
+% don't reference ToC in ToC
+\begin{KeepFromToc}
+    \tableofcontents
+\end{KeepFromToc}
+
+\newpage
+%\listoffigures
+\newpage
+\pagenumbering{arabic}
+
+
+% include subfiles
+\subfile{pages/00_pagetemplate.tex}
+\subfile{pages/00_listing_example.tex}
+\subfile{pages/00_subcaption_example.tex}
+\subfile{pages/00_table_example.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Appendix     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\appendix
+\Renumber{A}
+\appendixpage
+\label{appendixpage}
+%
+%
+%\onecolumn
+\subfile{pages/0A_appendices.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Glossary     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% add in the glossary
+%\twocolumn
+\Renumber{G}
+%\printnoidxglossary[nonumberlist, sort=word]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\Renumber{B}
+\renewcommand*{\bibfont}{\footnotesize}
+
+% natbib
+%\bibliography{documentRef}
+%\bibliographystyle{IEEEtranN}
+
+% bibtex
+\printbibliography{}
+
+
+\end{document}

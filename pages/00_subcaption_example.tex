@@ -1,0 +1,21 @@
+\documentclass{subfiles}
+\begin{document}
+
+\chapter{Chapter with a Subcaption}
+\subsection{Subcaption example}
+% see more examples here: 
+% https://tex.stackexchange.com/questions/333249/controlling-subfigure-captions-and-subfigure-placement
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.5\linewidth}
+      \centering\includegraphics[width=100pt]{example-image-a}
+      \caption{\label{fig:fig1} caption a}
+    \end{subfigure}%
+    \begin{subfigure}[b]{0.5\linewidth}
+      \centering\includegraphics[width=100pt]{example-image-b}
+      \caption{\label{fig:fig2} caption b}
+    \end{subfigure}
+    \caption{\subref{fig:fig1} shows Figure~1 and~\subref{fig:fig2} shows Figure~2.}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass{subfiles}
+\begin{document}
+
+\chapter{Chapter With a Listing}
+
+\begin{lstlisting}[caption=Overly Complicated RGB type specification in F\# \label{lst:colour_fsharp}]
+let bounded e = 
+  let max = 255
+  match e < 0 , e > max with 
+  | true, false -> 0 
+  | false, true -> max 
+  | _, _ -> e
+let divide e1 e2 =
+  match e2 = 0 with 
+  | true -> 0
+  | false -> e1 / e2
+type RGB = 
+  struct 
+    val R: int 
+    val G: int 
+    val B: int 
+    new(r:int, g:int, b:int) = {R = bounded r; G = bounded g; B = bounded b}
+    static member (+) (e1:RGB, e2:RGB) = RGB((e1.R + e2.R), (e1.G + e2.G), (e1.B + e2.B))
+    static member Succ (e1:RGB) = RGB((e1.R + 1), (e1.G + 1), (e1.B + 1))
+    static member (-) (e1:RGB, e2:RGB) = RGB((e1.R - e2.R), (e1.G - e2.G), (e1.B - e2.B))
+    static member (*) (e1:RGB, e2:RGB) = RGB((e1.R * e2.R), (e1.G * e2.G), (e1.B * e2.B))
+    static member (/) (e1:RGB, e2:RGB) = RGB((divide e1.R e2.R), (divide e1.G e2.G), (divide e1.B e2.B))
+  end
+\end{lstlisting}
+
+\end{document}

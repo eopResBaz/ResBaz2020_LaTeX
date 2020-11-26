@@ -1,0 +1,59 @@
+\documentclass{subfiles}
+\begin{document}
+
+\chapter{Chapter with Tables}
+Tables aren't so confusing when you align the text!
+
+\begin{table}[h]
+    \caption{Summary of Data Sources Investigated}
+    \label{tbl:data_summary}
+    \centering 
+    \small
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+                   \rowcolor{lightgreen}
+                   \textbf{Name} & \textbf{Source}  & \textbf{Climate Station}  & \textbf{Type}     & \textbf{10 Minute}   & \textbf{Hourly}    & \textbf{Daily}
+        \\ \hline
+                    CliFlo10min  &  CliFlo          & Albany                    & 2015 Observations & Yes                               & Yes                                            & Yes
+        \\ \hline
+                    CliFloHourly &  CliFlo          & Albany                    & 2015 Observations & \cellcolor{uoaSilverLining} No    & Yes                                            & Yes
+        \\ \hline
+                    CliFloDaily  &  CliFlo          & Albany                    & 2015 Observations & \cellcolor{uoaSilverLining} No    & \cellcolor{uoaSilverLining} No                 & Yes
+        \\ \hline
+                    NIWA12x24    &  SolarView       & Takapuna                  & Idealised Year    & \cellcolor{uoaSilverLining} No    & Yes                                            & Yes 
+        \\ \hline
+                    NIWA8760     &  SolarView       & Takapuna                  & Idealised Year    & \cellcolor{uoaSilverLining} No    & Yes                                            & Yes
+        \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+    \caption{Daily Cumulative Solar Irradiation Statistics for September and December (Wh/m2)}
+    \label{tbl:data_summary}
+    \centering 
+    \small
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+                   \rowcolor{black}
+                                                & \multicolumn{3}{c|}{\textbf{\color{white}September}} & \multicolumn{3}{c|}{\textbf{\color{white}December}} %\multicolumn{3}{c}{\textbf{Mar}} 
+        \\ \hline 
+        \cellcolor{black}\color{white}\textbf{Min}     & \cellcolor{medblue}\color{white}   780.6      &   \cellcolor{darkgreen}\color{white}            &   \cellcolor{lightgreen} 678         & \cellcolor{medblue}\color{white}  1872         &  \cellcolor{darkgreen}\color{white}             &   \cellcolor{lightgreen} 1726 
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{Q. 1}    & \cellcolor{medblue}\color{white}   1697.2     &   \cellcolor{darkgreen}\color{white}            &   \cellcolor{lightgreen}  1756       & \cellcolor{medblue}\color{white}  5739         &  \cellcolor{darkgreen}\color{white}             &   \cellcolor{lightgreen} 5148 
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{Med}     & \cellcolor{medblue}\color{white}   2136.1     &   \cellcolor{darkgreen}\color{white}            &   \cellcolor{lightgreen}  2068       & \cellcolor{medblue}\color{white}  6592         &  \cellcolor{darkgreen}\color{white}             &   \cellcolor{lightgreen} 6848 
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{Mean}    & \cellcolor{medblue}\color{white}   2111.3     &   \cellcolor{darkgreen}\color{white}2770        &   \cellcolor{lightgreen}  2130       & \cellcolor{medblue}\color{white}  6447         &  \cellcolor{darkgreen}\color{white}5213         &   \cellcolor{lightgreen} 6313 
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{Q. 3}    & \cellcolor{medblue}\color{white}   2519.5     &   \cellcolor{darkgreen}\color{white}            &   \cellcolor{lightgreen}  2612       & \cellcolor{medblue}\color{white}  7545         &  \cellcolor{darkgreen}\color{white}             &   \cellcolor{lightgreen} 8170 
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{Max}     & \cellcolor{medblue}\color{white}   3261.1     &   \cellcolor{darkgreen}\color{white}            &   \cellcolor{lightgreen}  3414       & \cellcolor{medblue}\color{white}  8889         &  \cellcolor{darkgreen}\color{white}             &   \cellcolor{lightgreen} 8901
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{SD}      & \cellcolor{medblue}\color{white}    715.5     &   \cellcolor{darkgreen}\color{white}            &   \cellcolor{lightgreen}  698.4      & \cellcolor{medblue}\color{white}  1687.7       &  \cellcolor{darkgreen}\color{white}             &   \cellcolor{lightgreen} 2204.6 
+        \\ \hline
+        \cellcolor{black}\color{white}\textbf{Name}    & \cellcolor{medblue}\color{white} CliFloHourly &   \cellcolor{darkgreen}\color{white} NIWA12x24  &   \cellcolor{lightgreen} NIWA8760    & \cellcolor{medblue}\color{white}  CliFloHourly & \cellcolor{darkgreen}\color{white}   NIWA12x24  &  \cellcolor{lightgreen}  NIWA8760
+        \\ \hline
+    \end{tabular}
+\end{table}
+
+\end{document}

@@ -87,15 +87,14 @@ marginparwidth=2.5cm, marginparsep=2cm]{geometry}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % natbib, if you like
 %\usepackage[numbers]{natbib}
-%\usepackage[style=authoryear,natbib=true]{biblatex}
 %
 % bibLaTeX (preferred)
 %
 % why bibLaTeX instead of natbib?
 % bibLaTeX allows you to pull out fields like Title easily 
 % bibLaTeX is still being maintained
-\usepackage[style=numeric,natbib=true]{biblatex}
-\usepackage{parskip}
+\usepackage[style=alphabetic,natbib=true]{biblatex}
+%\usepackage{parskip}
 
 
 
@@ -235,7 +234,7 @@ marginparwidth=2.5cm, marginparsep=2cm]{geometry}
     colorlinks=true,
     linkcolor=uoablue,
     citecolor=uoasilver,
-    urlcolor=uoaBody,
+    urlcolor=uoablue,
 }
 
 % Improve formatting of cross-references
@@ -288,7 +287,6 @@ marginparwidth=2.5cm, marginparsep=2cm]{geometry}
 
 % custom macros
 \newcommand{\eopcomment}[1]{\textcolor{red}{#1}}
-\newcommand{\nocitation}{\textcolor{red}{[no citation]}}
 
 
 

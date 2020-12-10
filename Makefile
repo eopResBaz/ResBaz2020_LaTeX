@@ -58,10 +58,11 @@ pdf :
 
 ool:
 	pandoc $(TEX) --biblio=$(BIB) -o ${OUT}/${PROJ}.odt --citeproc
+	cp $(OUT)/${PROJ}.odt .
 
 word:
 	pandoc $(TEX) --biblio=$(BIB) -o ${OUT}/${PROJ}.docx --citeproc
+	cp $(OUT)/${PROJ}.docx .
 
-open :
-	make pdf
-	open $(OUT)/document.pdf
+endnote:
+	bib2xml $(BIB) | xml2end > ${OUT}/citations.enw
